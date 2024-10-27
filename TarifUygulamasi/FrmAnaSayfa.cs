@@ -24,7 +24,18 @@ namespace TarifUygulamasi
             dgList.Columns[2].HeaderCell.Value = "Kategori";
             dgList.Columns[3].HeaderCell.Value = "Hazırlanma Süresi";
             dgList.Columns[4].HeaderCell.Value = "Talimatlar";
+
+            dgList.Columns[1].Width = 100;
+            dgList.Columns[2].Width = 100;
+            dgList.Columns[3].Width = 100;
+
             txtId.Text = "";
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmMalzemeEkle();
+            frm.ShowDialog();
         }
     }
 }

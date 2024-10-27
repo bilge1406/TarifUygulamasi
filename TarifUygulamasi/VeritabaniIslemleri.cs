@@ -13,8 +13,18 @@ namespace TarifUygulamasi
             return conn;
         }
 
-        public static string MalzemeEkle(string malzemeAdi, string toplamMiktar, int malzemeBirim, double birimFiyat)
+        public static string MalzemeEkle(string malzemeAdi, string toplamMiktar, string malzemeBirim, string birimFiyat)
         {
+            if (string.IsNullOrEmpty(malzemeAdi) || string.IsNullOrEmpty(toplamMiktar) || string.IsNullOrEmpty(malzemeBirim))
+            {
+                return "Lütfen bilgileri eksiksiz giriniz";
+            }
+
+            if(!decimal.TryParse(birimFiyat, out var fiyat))
+            {
+                return "Fiyat bilgisi geçersizdir.";
+            }
+
             var conn = YeniBaglantiOlustur();
             try
             {
@@ -23,7 +33,7 @@ namespace TarifUygulamasi
                 cmd.Parameters.AddWithValue("@malzemeAdi", malzemeAdi);
                 cmd.Parameters.AddWithValue("@toplamMiktar", toplamMiktar);
                 cmd.Parameters.AddWithValue("@malzemeBirim", malzemeBirim);
-                cmd.Parameters.AddWithValue("@birimFiyat", birimFiyat);
+                cmd.Parameters.AddWithValue("@birimFiyat", fiyat);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
