@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TarifUygulamasi
@@ -17,19 +10,21 @@ namespace TarifUygulamasi
             InitializeComponent();
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-
+            SayfayiYenile();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SayfayiYenile()
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            dgList.DataSource = null;
+            dgList.DataSource = VeritabaniIslemleri.ListeGetir("SELECT [TarifID], [TarifAdi], [Kategori], [HazirlamaSuresi], [Talimatlar] FROM [dbo].[Tarifler]");
+            dgList.Columns[0].Visible = false;
+            dgList.Columns[1].HeaderCell.Value = "Tarif Adı";
+            dgList.Columns[2].HeaderCell.Value = "Kategori";
+            dgList.Columns[3].HeaderCell.Value = "Hazırlanma Süresi";
+            dgList.Columns[4].HeaderCell.Value = "Talimatlar";
+            txtId.Text = "";
         }
     }
 }
