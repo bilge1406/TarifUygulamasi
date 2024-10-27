@@ -1,6 +1,6 @@
 ﻿namespace TarifUygulamasi
 {
-    partial class Form1
+    partial class FrmAnaSayfa
     {
         /// <summary>
         /// Required designer variable.

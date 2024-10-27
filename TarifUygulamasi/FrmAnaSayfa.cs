@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace TarifUygulamasi
 {
-    public partial class Form1 : Form
+    public partial class FrmAnaSayfa : Form
     {
-        public Form1()
+        public FrmAnaSayfa()
         {
             InitializeComponent();
         }
