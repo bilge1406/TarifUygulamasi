@@ -9,7 +9,7 @@ namespace TarifUygulamasi
         static string BasariliEkleMesaji = "Başarılı şekilde kaydedildi.";
         public static SqlConnection YeniBaglantiOlustur()
         {
-            var conn = new SqlConnection("Data Source = .\\; Initial Catalog = TarifUygulamasi; Integrated Security = True;");
+            var conn = new SqlConnection("Data Source = DESKTOP-N2C480Q\\SQLEXPRESS; Initial Catalog = TarifUygulamasi; Integrated Security = True;");
             return conn;
         }
 
