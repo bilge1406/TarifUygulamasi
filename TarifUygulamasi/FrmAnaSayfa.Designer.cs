@@ -92,13 +92,20 @@
             // 
             // dgList
             // 
+            this.dgList.AllowUserToAddRows = false;
+            this.dgList.AllowUserToDeleteRows = false;
             this.dgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgList.Location = new System.Drawing.Point(0, 109);
+            this.dgList.MultiSelect = false;
             this.dgList.Name = "dgList";
+            this.dgList.ReadOnly = true;
+            this.dgList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgList.Size = new System.Drawing.Size(1272, 642);
             this.dgList.TabIndex = 3;
+            this.dgList.Click += new System.EventHandler(this.dgList_Click);
+            this.dgList.DoubleClick += new System.EventHandler(this.dgList_DoubleClick);
             // 
             // label1
             // 
@@ -122,16 +129,16 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(0, 26);
+            this.txtId.Location = new System.Drawing.Point(1184, 11);
             this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(14, 20);
+            this.txtId.Size = new System.Drawing.Size(77, 20);
             this.txtId.TabIndex = 11;
-            this.txtId.Visible = false;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnAra);
+            this.panel1.Controls.Add(this.txtId);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
@@ -158,7 +165,6 @@
             this.ClientSize = new System.Drawing.Size(1272, 751);
             this.Controls.Add(this.dgList);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmAnaSayfa";

@@ -12,10 +12,10 @@ namespace TarifUygulamasi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SayfayiYenile();
+            FormuYenile();
         }
 
-        private void SayfayiYenile()
+        private void FormuYenile()
         {
             dgList.DataSource = null;
             dgList.DataSource = VeritabaniIslemleri.ListeGetir("SELECT [TarifID], [TarifAdi], [Kategori], [HazirlamaSuresi], [Talimatlar] FROM [dbo].[Tarifler]");
@@ -35,6 +35,18 @@ namespace TarifUygulamasi
         private void btnAra_Click(object sender, EventArgs e)
         {
             var frm = new FrmMalzemeEkle();
+            frm.ShowDialog();
+        }
+
+        private void dgList_Click(object sender, EventArgs e)
+        {
+            txtId.Text = dgList.SelectedRows[0].Cells[0].Value.ToString();
+        }
+
+        private void dgList_DoubleClick(object sender, EventArgs e)
+        {
+            var frm = new FrmTarifIslemleri();
+            frm.Id = txtId.Text;
             frm.ShowDialog();
         }
     }
