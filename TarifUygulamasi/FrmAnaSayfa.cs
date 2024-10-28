@@ -46,6 +46,7 @@ namespace TarifUygulamasi
             int eslesen = 0;
             if (string.IsNullOrEmpty(txtAra.Text) && string.IsNullOrEmpty(cmbMalzemeAdi1.Text) && string.IsNullOrEmpty(cmbMalzemeAdi2.Text) && string.IsNullOrEmpty(cmbMalzemeAdi3.Text))
             {
+                FormuYenile();
                 return;
             }
             var sorgu = "SELECT t.[TarifID], t.[TarifAdi], t.[Kategori], t.[HazirlamaSuresi], FORMAT(SUM(tm.MalzemeMiktar * m.BirimFiyat),'N2') AS Maliyet, COUNT(DISTINCT TM.MalzemeID) AS ToplamMalzemeSayisi FROM [dbo].[Tarifler] t INNER JOIN [TarifMalzeme] tm on tm.TarifID= t.TarifID INNER JOIN [Malzemeler] m on tm.MalzemeID = m.MalzemeID";
