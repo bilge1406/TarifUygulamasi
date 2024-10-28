@@ -34,7 +34,7 @@ namespace TarifUygulamasi
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dgList_Click(object sender, EventArgs e)
@@ -46,7 +46,10 @@ namespace TarifUygulamasi
         {
             var frm = new FrmTarifIslemleri();
             frm.Id = txtId.Text;
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                FormuYenile();
+            }
         }
 
         private void tariflerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,7 +88,10 @@ namespace TarifUygulamasi
             }
             var frm = new FrmTarifIslemleri();
             frm.Id = txtId.Text;
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                FormuYenile();
+            }
         }
     }
 }

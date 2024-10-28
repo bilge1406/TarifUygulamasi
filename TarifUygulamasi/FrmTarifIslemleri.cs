@@ -59,6 +59,7 @@ namespace TarifUygulamasi
 
         private void btnKapat_Click(object sender, System.EventArgs e)
         {
+            DialogResult = DialogResult.OK;
             Close();
         }
 
@@ -72,14 +73,8 @@ namespace TarifUygulamasi
                     MessageBox.Show(sonuc);
                     return;
                 }
-                for (int i = 0; i < dgList.Rows.Count; i++)
-                {
-                    var malzemeId = dt.Rows[i][0].ToString();
-                    var malzemeMiktar = dt.Rows[i][1].ToString();
-                    VeritabaniIslemleri.TarifMalzemeEkle(id.ToString(), malzemeId, malzemeMiktar);
-                }
-                DialogResult = DialogResult.OK;
-                Close();
+                Id = id.ToString();
+                FormuYenile();
             }
             else//Güncelleme adımı
             {
