@@ -18,7 +18,12 @@ namespace TarifUygulamasi
         private void btnSave_Click(object sender, EventArgs e)
         {
             var sonuc = VeritabaniIslemleri.MalzemeEkle(txtMalzemeAdi.Text, txtToplamMiktar.Text, txtMalzemeBirimi.Text, txtBirimFiyati.Text);
-            MessageBox.Show(sonuc);
+            if (sonuc != "")
+            {
+                MessageBox.Show(sonuc);
+                return;
+            }
+            DialogResult = DialogResult.OK;
         }
     }
 }

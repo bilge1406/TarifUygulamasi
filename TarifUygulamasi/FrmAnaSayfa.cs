@@ -34,8 +34,7 @@ namespace TarifUygulamasi
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            var frm = new FrmMalzemeEkle();
-            frm.ShowDialog();
+            
         }
 
         private void dgList_Click(object sender, EventArgs e)
@@ -45,6 +44,45 @@ namespace TarifUygulamasi
 
         private void dgList_DoubleClick(object sender, EventArgs e)
         {
+            var frm = new FrmTarifIslemleri();
+            frm.Id = txtId.Text;
+            frm.ShowDialog();
+        }
+
+        private void tariflerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmTarifIslemleri();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                FormuYenile();
+            }
+        }
+
+        private void tarifSilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtId.Text))
+            {
+                MessageBox.Show("Lütfen düzenlenecek tarifi seçiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            var tarifAdi = dgList.SelectedRows[0].Cells[1].Value.ToString();
+            var sonuc = MessageBox.Show(tarifAdi + " isimli tarif silinecektir. Onaylıyor musunuz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (sonuc == DialogResult.Yes)
+            {
+                var sonucSql = VeritabaniIslemleri.TarifSil(txtId.Text);
+                if (sonucSql != "")
+                {
+                    MessageBox.Show(sonucSql);
+                }
+                FormuYenile();
+            }
+        }
+
+        private void tarifDüzenleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtId.Text))
+            {
+                MessageBox.Show("Lütfen düzenlenecek tarifi seçiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             var frm = new FrmTarifIslemleri();
             frm.Id = txtId.Text;
             frm.ShowDialog();

@@ -77,18 +77,21 @@
             this.tariflerToolStripMenuItem.Name = "tariflerToolStripMenuItem";
             this.tariflerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tariflerToolStripMenuItem.Text = "Tarif Ekle";
+            this.tariflerToolStripMenuItem.Click += new System.EventHandler(this.tariflerToolStripMenuItem_Click);
             // 
             // tarifSilToolStripMenuItem
             // 
             this.tarifSilToolStripMenuItem.Name = "tarifSilToolStripMenuItem";
             this.tarifSilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tarifSilToolStripMenuItem.Text = "Tarif Sil";
+            this.tarifSilToolStripMenuItem.Click += new System.EventHandler(this.tarifSilToolStripMenuItem_Click);
             // 
             // tarifDüzenleToolStripMenuItem
             // 
             this.tarifDüzenleToolStripMenuItem.Name = "tarifDüzenleToolStripMenuItem";
             this.tarifDüzenleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tarifDüzenleToolStripMenuItem.Text = "Tarif Düzenle";
+            this.tarifDüzenleToolStripMenuItem.Click += new System.EventHandler(this.tarifDüzenleToolStripMenuItem_Click);
             // 
             // dgList
             // 
@@ -134,6 +137,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(77, 20);
             this.txtId.TabIndex = 11;
+            this.txtId.Visible = false;
             // 
             // panel1
             // 
