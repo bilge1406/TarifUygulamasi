@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAra = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tariflerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,17 +40,23 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAra = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbMalzemeAdi1 = new System.Windows.Forms.ComboBox();
+            this.cmbMalzemeAdi2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbMalzemeAdi3 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtAra
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtAra.Location = new System.Drawing.Point(149, 50);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(282, 20);
+            this.txtAra.TabIndex = 1;
             // 
             // menuStrip1
             // 
@@ -100,12 +106,12 @@
             this.dgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgList.Location = new System.Drawing.Point(0, 109);
+            this.dgList.Location = new System.Drawing.Point(0, 173);
             this.dgList.MultiSelect = false;
             this.dgList.Name = "dgList";
             this.dgList.ReadOnly = true;
             this.dgList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgList.Size = new System.Drawing.Size(1272, 642);
+            this.dgList.Size = new System.Drawing.Size(1272, 578);
             this.dgList.TabIndex = 3;
             this.dgList.Click += new System.EventHandler(this.dgList_Click);
             this.dgList.DoubleClick += new System.EventHandler(this.dgList_DoubleClick);
@@ -141,26 +147,86 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmbMalzemeAdi3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.cmbMalzemeAdi2);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.cmbMalzemeAdi1);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnAra);
             this.panel1.Controls.Add(this.txtId);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtAra);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1272, 85);
+            this.panel1.Size = new System.Drawing.Size(1272, 149);
             this.panel1.TabIndex = 12;
             // 
             // btnAra
             // 
-            this.btnAra.Location = new System.Drawing.Point(388, 47);
+            this.btnAra.Location = new System.Drawing.Point(995, 47);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(75, 23);
+            this.btnAra.Size = new System.Drawing.Size(110, 85);
             this.btnAra.TabIndex = 6;
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = true;
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(496, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(140, 24);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "1. Malzeme Adı";
+            // 
+            // cmbMalzemeAdi1
+            // 
+            this.cmbMalzemeAdi1.FormattingEnabled = true;
+            this.cmbMalzemeAdi1.Location = new System.Drawing.Point(642, 49);
+            this.cmbMalzemeAdi1.Name = "cmbMalzemeAdi1";
+            this.cmbMalzemeAdi1.Size = new System.Drawing.Size(282, 21);
+            this.cmbMalzemeAdi1.TabIndex = 15;
+            // 
+            // cmbMalzemeAdi2
+            // 
+            this.cmbMalzemeAdi2.FormattingEnabled = true;
+            this.cmbMalzemeAdi2.Location = new System.Drawing.Point(642, 80);
+            this.cmbMalzemeAdi2.Name = "cmbMalzemeAdi2";
+            this.cmbMalzemeAdi2.Size = new System.Drawing.Size(282, 21);
+            this.cmbMalzemeAdi2.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(496, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 24);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "2. Malzeme Adı";
+            // 
+            // cmbMalzemeAdi3
+            // 
+            this.cmbMalzemeAdi3.FormattingEnabled = true;
+            this.cmbMalzemeAdi3.Location = new System.Drawing.Point(642, 107);
+            this.cmbMalzemeAdi3.Name = "cmbMalzemeAdi3";
+            this.cmbMalzemeAdi3.Size = new System.Drawing.Size(282, 21);
+            this.cmbMalzemeAdi3.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(496, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 24);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "3. Malzeme Adı";
             // 
             // FrmAnaSayfa
             // 
@@ -185,7 +251,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menüToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tariflerToolStripMenuItem;
@@ -197,6 +263,12 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAra;
+        private System.Windows.Forms.ComboBox cmbMalzemeAdi3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbMalzemeAdi2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbMalzemeAdi1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
